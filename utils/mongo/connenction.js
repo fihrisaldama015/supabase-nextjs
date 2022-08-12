@@ -6,7 +6,8 @@ const ConnectDB = () => {
     useNewURLParser: true,
   };
 
-  const mongoURL = "mongodb://127.0.0.1:27017/supabase";
+  // const mongoURL = "mongodb://127.0.0.1:27017/supabase";
+  const mongoURL = `${process.env.MONGODB_URL}`;
 
   try {
     mongoose.connect(mongoURL, mongoConfig);
